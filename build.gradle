@@ -37,6 +37,26 @@ minecraft {
     replace "@VERSION@", "${config.mod_version}"
 }
 
+configurations {
+	apis
+	compile.extendsFrom apis
+}
+
+repositories {
+    maven {
+        name = "ic2"
+        url = "http://maven.ic2.player.to/"
+    }
+    maven {
+        name = "bdew"
+        url = "http://jenkins.bdew.net/maven"
+    }
+	maven {
+		name = "violentninjad"
+		url = "https://raw.githubusercontent.com/violentninjad/MavenRepository/master/maven"
+	}
+}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -50,7 +70,12 @@ dependencies {
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
-
+	
+	apis 'net.industrial-craft:industrialcraft-2:2.2.575-experimental:api'
+    //I used Bdew's Forestry All-Power code to help me set this up
+    apis "net.bdew.thirdparty:CoFHLib:R1.0.1:api"
+	
+	apis "violentninjad.mcmods:ViolentAPI:1.7.10-01:api"
 }
 
 processResources
@@ -70,3 +95,4 @@ processResources
         exclude '**/*.info'
     }
 }
+
