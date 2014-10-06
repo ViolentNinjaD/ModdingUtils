@@ -33,8 +33,8 @@ minecraft {
     version = config.minecraft_version + "-" + config.forge_version
     runDir = "eclipse"
 	
-	replaceIn "reference/Reference.java"
-    replace "@VERSION@", "${config.mod_version}
+	replaceIn "ModdingUtils.java"
+    replace "@VERSION@", "${config.mod_version}"
 }
 
 dependencies {
@@ -55,20 +55,18 @@ dependencies {
 
 processResources
 {
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+    exclude '**/*.xcf'
 
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-                
+        include '*.info'
+
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'mod_version': project.version, 'minecraft_version': project.config.minecraft_version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+        exclude '**/*.info'
     }
 }
