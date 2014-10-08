@@ -75,7 +75,7 @@ dependencies {
     //I used Bdew's Forestry All-Power code to help me set this up
     apis "net.bdew.thirdparty:CoFHLib:R1.0.1:api"
 	
-	apis "violentninjad.mcmods:ViolentAPI:1.7.10-01:api"
+	apis "violentninjad.violentapi:ViolentAPI:1.7.10-01"
 }
 
 processResources
