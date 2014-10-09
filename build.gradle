@@ -96,3 +96,11 @@ processResources
     }
 }
 
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: 'file://C:/Development/MavenRepository/maven'
+        }
+    }
+}
+
