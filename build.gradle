@@ -44,38 +44,36 @@ configurations {
 
 repositories {
     maven {
-        name = "ic2"
+        name = "IC2"
         url = "http://maven.ic2.player.to/"
     }
     maven {
-        name = "bdew"
+        name = "Bdew"
         url = "http://jenkins.bdew.net/maven"
     }
 	maven {
-		name = "violentninjad"
+		name = "ViolentNinjaD"
 		url = "https://raw.githubusercontent.com/violentninjad/MavenRepository/master/maven"
+	}
+	maven {
+		name = "ChickenBones"
+		url = "http://chickenbones.net/maven/"
+	}
+	maven {
+		name = "Mobius"
+		url = "http://mobiusstrip.eu/maven/"
 	}
 }
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
-	
+	//IC2 - by Player and the IC2 Team :)
 	apis 'net.industrial-craft:industrialcraft-2:2.2.575-experimental:api'
-    //I used Bdew's Forestry All-Power code to help me set this up
+    //CoFHLib - by Team CoFH - On Bdew's Maven Repo :)
     apis "net.bdew.thirdparty:CoFHLib:R1.0.1:api"
-	
+	//ViolentAPI - by me :)
 	apis "violentninjad.violentapi:ViolentAPI:1.7.10-01"
+	//EE3 - Pahimar :)
+	apis "com.pahimar.ee3:EquivalentExchange3:1.7.10-0.2.348:dev"
 }
 
 processResources
