@@ -74,6 +74,8 @@ dependencies {
 	apis "violentninjad.violentapi:ViolentAPI:1.7.10-01"
 	//EE3 - Pahimar :)
 	apis "com.pahimar.ee3:EquivalentExchange3:1.7.10-0.2.348:dev"
+    //NEI - by ChickenBones :)
+    apis "codechicken:NotEnoughItems:NotEnoughItems/1.7.10-1.0.3.62:dev"
 }
 
 processResources
